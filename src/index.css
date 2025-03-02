@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-poppins bg-dark-bg;
+  }
+}
+
+input::placeholder {
+  @apply text-gray-500;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-dark-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-600;
+}
+
+/* FilePond Custom Styles */
+.filepond--root {
+  @apply mb-0 !important;
+}
+
+/* Remove white background and lines */
+.filepond--panel-root {
+  background-color: transparent !important;
+}
+
+.filepond--panel {
+  background-color: transparent !important;
+}
+
+.filepond--drip {
+  background-color: transparent !important;
+}
+
+.filepond--drip-blob {
+  background-color: transparent !important;
+}
+
+/* Style the drop area */
+.filepond--drop-label {
+  @apply text-sm flex items-center justify-center h-full !important;
+  background-color: transparent !important;
+  border: 2px dashed rgb(75, 85, 99) !important;
+  border-radius: 0.5rem !important;
+}
+
+.filepond--drop-label label {
+  @apply text-center !important;
+}
+
+.dark .filepond--drop-label {
+  @apply text-gray-400 !important;
+}
+
+.light .filepond--drop-label {
+  @apply text-gray-600 !important;
+}
+
+/* Hide PQINA credit */
+.filepond--credits {
+  display: none !important;
+}
+
+/* Make FilePond container rectangular */
+.filepond--root {
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+/* Style the file item */
+.filepond--item {
+  @apply overflow-hidden !important;
+}
+
+.filepond--item-panel {
+  @apply bg-gray-700 !important;
+}
+
+/* Style the file info */
+.filepond--file {
+  @apply bg-gray-700 !important;
+  color: white !important;
+}
+
+.filepond--file-info {
+  @apply text-gray-300 !important;
+}
+
+.filepond--file-status {
+  @apply text-gray-400 !important;
+}
+
+/* Style the action buttons */
+.filepond--file-action-button {
+  @apply bg-gray-600 cursor-pointer !important;
+  color: white !important;
+}
+
+.filepond--file-action-button:hover {
+  @apply bg-gray-500 !important;
+}
+
+/* Style the progress indicator */
+.filepond--progress-indicator {
+  @apply bg-blue-500 !important;
+}
+
+/* Style the browse button */
+.filepond--browser {
+  @apply text-blue-500 !important;
+}
+
+/* Remove white lines from grid */
+.filepond--list-scroller {
+  @apply !important;
+}
+
+.filepond--list {
+  @apply !important;
+}
+
+/* Chart Animations */
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-draw {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw 2s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-scale-up {
+  animation: scaleUp 0.3s ease-out forwards;
+}
